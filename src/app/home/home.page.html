@@ -1,14 +1,64 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="ribbon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>    
+      Gaming
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onePlayer()">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+      <ion-button (click)="twoPlayer()">
+        <ion-icon name="people"></ion-icon>
+      </ion-button>
+      <ion-button (click)="refresh()">
+        <ion-icon name="refresh-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/player.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Player 1</h2>
+        <h3>Result Is : {{player1}}</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/player.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Player 2</h2>
+        <h3>Result Is : {{player2}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <table border=2 align="center">
+    <tr>
+      <td (click)="a(0)">{{cell[0][0]}}</td>
+      <td (click)="a(1)">{{cell[0][1]}}</td>
+      <td (click)="a(2)">{{cell[0][2]}}</td>
+    </tr>
+    <tr>
+      <td (click)="a(3)">{{cell[1][0]}}</td>
+      <td (click)="a(4)">{{cell[1][1]}}</td>
+      <td (click)="a(5)">{{cell[1][2]}}</td>
+    </tr>
+    <tr>
+      <td (click)="a(6)">{{cell[2][0]}}</td>
+      <td (click)="a(7)">{{cell[2][1]}}</td>
+      <td (click)="a(8)">{{cell[2][2]}}</td>
+    </tr>
+  </table>
+  <audio src=""></audio>
 </ion-content>
